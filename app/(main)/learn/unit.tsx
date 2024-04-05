@@ -13,7 +13,7 @@ type Props = {
   })[];
   activeLesson:
     | (typeof lessons.$inferSelect & {
-        unit: typeof units;
+        unit: typeof units.$inferSelect;
       })
     | undefined;
   activeLessonPercentage: number;
