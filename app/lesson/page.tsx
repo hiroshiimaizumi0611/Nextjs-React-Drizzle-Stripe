@@ -16,7 +16,6 @@ const LessonPage = async () => {
     100;
 
   return (
-    <div>
       <Quiz
         initialLessonId={lesson.id}
         initialLessonChallenge={lesson.challenges}
@@ -24,7 +23,6 @@ const LessonPage = async () => {
         initialPercentage={initialPercentage}
         userSubscriptions={null}
       />
-    </div>
   );
 };
 
