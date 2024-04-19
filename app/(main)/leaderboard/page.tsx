@@ -6,6 +6,8 @@ import { UserProgress } from "@/components/user-progress";
 import { getTopTenUsers, getUserProgress, getUserSubscriptions } from "@/db/queries";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { Promo } from "@/components/promo";
+import { Quests } from "@/components/quests";
 
 const LeaderboardPage = async () => {
   const userProgress = await getUserProgress();
@@ -27,6 +29,8 @@ const LeaderboardPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
+        {!isPro && <Promo />}
+        <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
         <div className="w-full flex flex-col items-center">
